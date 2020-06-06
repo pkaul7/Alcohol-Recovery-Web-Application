@@ -3,7 +3,14 @@
 
 Our project is to design an assistive web application for those recovering from alcohol addiction. The application will provide the ability to track alcohol intake as well as motivate patients and communicate with their physician.
 
-## **2 Process Description:**
+## **2 Deployed Version:**
+
+You can try and access the app here - https://apps.hdap.gatech.edu/alcoholrecovery2-frontend/login.html
+Username - demo1
+Password - demo1
+
+
+## **3 Process Description:**
 
 **Patient Stat Monitoring and Management**
 
@@ -38,7 +45,7 @@ Entrance criteria: Metrics derived from regular user logs on alcohol consumption
 Exit criteria: An email containing metrics and summarizing the progress of the user. Physicians can communicate feedback potentially requesting additional information about their patient if unsatisfied with the content within the email.
 
 
-## App Functionalities:
+## 4 App Functionalities:
 
 **Login**  
 
