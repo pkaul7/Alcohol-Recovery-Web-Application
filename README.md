@@ -1,7 +1,7 @@
 
 ## **1 Introduction:**
 
-Our project is to design an assistive web application for those recovering from alcohol addiction. The application will provide the ability to track alcohol intake as well as motivate patients and communicate with their physician.
+The project's aim is to design an assistive web application for those recovering from alcohol addiction. The application will provide the ability to track alcohol intake as well as motivate patients and communicate with their physician.
 
 ## **2 Deployed Version:**
 
