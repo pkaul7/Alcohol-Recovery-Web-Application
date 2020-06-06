@@ -59,20 +59,19 @@ The tracker projects charts and the trajectory of their recovery so far.
 Customized Motivational facts are displayed that will help users to stick to their routine
 <br>
 **Suggest activities**  
-\
+
 <img src="screenshots/maps.JPG" alt="hi" width="650" class="inline"/>  
 
-<br>
 Relapse in recovery patients is quite common. So this page will suggest user activities or events nearby using zip code/ coordinates.  
-<br>
-**Milestones**  
-<br>
-\
+
+
+**Milestones**   
+
 <img src="screenshots/milestones.JPG" alt="hi" width="650" class="inline"/>  
-\
-<br>
+
+
 The Milestones will act as motivation for the user to keep going. They can earn badges along the way. The main idea is to have a goal setting in their mind.
-<br>
+
 
 ## ** Team:**
 
