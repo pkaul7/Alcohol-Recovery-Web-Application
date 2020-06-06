@@ -5,9 +5,9 @@ Our project is to design an assistive web application for those recovering from 
 
 ## **2 Deployed Version:**
 
-You can try and access the app here - https://apps.hdap.gatech.edu/alcoholrecovery2-frontend/login.html
-Username - demo1
-Password - demo1
+You can try and access the app here - https://apps.hdap.gatech.edu/alcoholrecovery2-frontend/login.html  
+Username - demo1  
+Password - demo1  
 
 
 ## **3 Process Description:**
