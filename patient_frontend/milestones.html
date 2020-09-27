@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Milestones | Alcohol Recovery 2</title>
+<!--	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+-->
+    <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<!-- <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+	 <!-- Bootstrap CSS CDN -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous"> -->
+    <!-- Our Custom CSS -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+
+    <!-- Font Awesome JS -->
+    <script  src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script  src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="css/loading-bar.min.css">
+	<script type="text/javascript" src="css/loading-bar.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+	<script src="responsive.js" type="text/javascript"></script>
+	<script src="ajax.js" type="text/javascript"></script>
+	<div style="display:none;">
+		<div id="nameStorage"></div>
+		<div id="heightStorage"></div>
+		<div id="weightStorage"></div>
+	</div>
+	
+	<div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Drink<span class='logo-color'>Tracker</span></h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li><a href="tracker.html"><i class='fas fa-beer'></i> Track Drinks</a></li>
+                <li><a href="history.html"><i class='fas fa-chart-bar'></i> History</a></li>
+                <li><a href="activities.html"><i class='fas fa-walking'></i> Activities</a></li>
+                <li class='active'><a href="milestones.html"><i class='fas fa-trophy'></i> Milestones</a></li>
+            </ul>
+
+            <ul class="list-unstyled CTAs">
+                <li><a href="https://apps.hdap.gatech.edu/alcoholrecovery2-backend/login/logout" class="logout">Logout</a></li>
+            </ul>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container-fluid">
+                    <!-- <button type="button" id="sidebarCollapse" class="btn btn-info"><i class="fas fa-align-left"></i> <span></span></button> -->
+                    <div><div id='header-name'></div><div id='header-date'></div></div>
+                    <div class="nav navbar-nav ml-auto"><div>Height: <span id='header-height'>0</span> in.<br>Weight: <span id='header-weight'>0</span> lbs.</div></div>
+                </div>
+            </nav>
+
+            <h1>Milestones</h1>
+
+            <div class='row' style='margin-top: 40px;'>
+                <div class='col-md-4'>
+                    <div class='card milestone-card'>
+                        <div class='card-body'>
+                            <div class='milestone-image'><div id='milestone_1' class="ldBar label-center" data-type="fill" data-fill-background-extrude="1" data-fill-dir="btt" data-fill-background="#444"  data-img="img/bronze-ribbon.svg" data-img-size="150,150" data-value="" style="margin: auto;"></div></div>
+                            <div class='milestone-title'>7 DAYS SOBER</div>
+                        </div>
+                    </div>
+                </div>
+                <div class='col-md-4'>
+                    <div class='card milestone-card'>
+                        <div class='card-body'>
+                            <div class='milestone-image'><div id='milestone_2'class="ldBar label-center" data-type="fill" data-fill-background-extrude="1" data-fill-dir="btt" data-fill-background="#444" data-img="img/silver-ribbon.svg" data-img-size="150,150" data-value="" style="margin: auto;"></div></div>
+                            <div class='milestone-title'>1 MONTH SOBER</div>
+                        </div>
+                    </div>
+                </div>
+                <div class='col-md-4'>
+                    <div class='card milestone-card'>
+                        <div class='card-body'>
+                            <div class='milestone-image'><div id='milestone_3'class="ldBar label-center" data-type="fill" data-fill-background-extrude="1" data-fill-dir="btt" data-fill-background="#444" data-img="img/gold-ribbon.svg" data-img-size="150,150" data-value="" style="margin: auto;"></div></div>
+                            <div class='milestone-title'>1 YEAR SOBER</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class='row' style='margin-top: 20px;'>
+                <div class='col-md-12'>
+                    <div class='milestone-motivation'>KEEP UP THE GREAT WORK!</div>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+	loadDate();
+	loadName(API_ROOT+"/alcoholrecovery2-backend/user/getName");
+    	loadHeight(API_ROOT+"/alcoholrecovery2-backend/user/getHeight");
+    	loadWeight(API_ROOT+"/alcoholrecovery2-backend/user/getWeight");
+	
+	//check login status, if not logged in, redirect to login
+	//loadLogIn("https://apps.hdap.gatech.edu/alcoholrecovery2-backend/login/loggedIn");
+
+
+
+    var drinkData;
+    var rows = [];
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+            $.get(API_ROOT+"/alcoholrecovery2-backend/user/lastDrink",function(data){
+                  drinkData = data;
+
+                var date = new Date(drinkData.year,drinkData.month-1,drinkData.day);
+                var today = new Date();
+
+                var timeDiff = today.getTime() - date.getTime();
+                var diff_days = timeDiff / (1000 * 3600 * 24);
+
+                var m1 = diff_days/7;
+                if(m1>1){
+                    m1 = 1.0
+                }
+
+                var m2 = diff_days/30;
+                if(m2>1){
+                    m2 = 1.0;
+                }
+
+                var m3 = diff_days/365;
+                if(m3>1){
+                    m3 = 1.0;
+                }
+
+                m1 = m1.toFixed(2) * 100;
+                m2 = m2.toFixed(2) * 100;
+                m3 = m3.toFixed(2) * 100;
+                new ldBar('#milestone_1').set(m1,true);
+                new ldBar('#milestone_2').set(m2,true);
+                new ldBar ('#milestone_3').set(m3,true);
+            })
+        });
+
+
+
+
+        function getMilestone(rows, period){
+
+            var i=0;
+            len = rows.length;
+            len = Math.min(len,period);
+            rows.reverse();
+            //console.log(len);
+            for (i = 0; i < len ; i++){
+                if((rows[i][3])>0)
+                    break;
+            }
+            i = (((i+1)/period)*100);
+            return i.toFixed(2);
+
+        }
+
+        var m1 = getMilestone(rows,7);
+        var m2 = getMilestone(rows,30);
+        var m3 = getMilestone(rows,365);      
+
+        var div = $('#milestone_1');
+     //   div.attr('data-value',m1);
+        //console.log(div.attr('data-value')); 
+        var div = $('#milestone_2');
+      //  div.attr('data-value',m2);
+
+        var div = $('#milestone_3');
+     //   div.attr('data-value',m3);
+
+    </script>
+
+</body>
+</html>

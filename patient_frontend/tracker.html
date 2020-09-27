@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Drink Tracker | Alcohol Recovery 2</title>
+    <!--	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+-->
+    <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+
+
+    <!-- <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+    <!-- Bootstrap CSS CDN -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous"> -->
+    <!-- Our Custom CSS -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+            integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+            crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+            integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+            crossorigin="anonymous"></script>
+
+  <style>
+
+
+      .alert-success {
+          display:none;
+          background: #00ab9a !important;
+          color: #fff !important;
+          font-weight: 700;
+      }
+
+  </style>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+<script src="responsive.js" type="text/javascript"></script>
+<script src="ajax.js" type="text/javascript"></script>
+
+<div style="display:none;">
+	<div id="nameStorage"></div>
+	<div id="heightStorage"></div>
+	<div id="weightStorage"></div>
+</div>
+    
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h3>Drink<span class='logo-color'>Tracker</span></h3>
+        </div>
+
+        <ul class="list-unstyled components">
+            <li class="active"><a href="tracker.html"><i class='fas fa-beer'></i> Track Drinks</a></li>
+            <li><a href="history.html"><i class='fas fa-chart-bar'></i> History</a></li>
+            <li><a href="activities.html"><i class='fas fa-walking'></i> Activities</a></li>
+            <li><a href="milestones.html"><i class='fas fa-trophy'></i> Milestones</a></li>
+        </ul>
+
+        <ul class="list-unstyled CTAs">
+            <li><a href="https://apps.hdap.gatech.edu/alcoholrecovery2-backend/login/logout" class="logout">Logout</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Page Content  -->
+    <div id="content">
+
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <!-- <button type="button" id="sidebarCollapse" class="btn btn-info"><i class="fas fa-align-left"></i> <span></span></button> -->
+                <div><div id='header-name'></div><div id='header-date'></div></div>
+                <div class="nav navbar-nav ml-auto"><div>Height: <span id='header-height'>0</span> in.<br>Weight: <span id='header-weight'>0</span> lbs.</div></div>
+            </div>
+        </nav>
+
+        <h1>Drink Tracker  </h1>
+
+        <div class='row' style='margin-top: 40px;'>
+            <div class='col-md-8'>
+                <div id="drink_saved" class="alert alert-success" role="alert">
+                   Drinks Saved
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class='row'>
+                    <div class='col-md-6'>
+
+                        <div class='card milestone-card'>
+                            <div class='card-body'>
+
+                                <div class='tracker-image'><img src='img/beer.png' alt='beer'></div>
+                                <div class='tracker-title'>Alcohol</div>
+                                <div class='tracker-input'>
+                                    <div class='input-group'>
+                                        <select class="form-control custom-select" name="amount-alcohol" id="amount-alcohol">
+						<option value="">Select amount...</option>
+						<option value="4">4 oz.</option>
+						<option value="8">8 oz.</option>
+						<option value="12">12 oz.</option>
+						<option value="16">16 oz.</option>
+					    </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='col-md-6'>
+                        <div class='card milestone-card'>
+                            <div class='card-body'>
+                                <div class='tracker-image'><img src='img/water.png' alt='water'></div>
+                                <div class='tracker-title'>Water</div>
+                                <div class='tracker-input'>
+                                    <div class='input-group'>
+                                        <select class="form-control custom-select" name="amount-water" id="amount-water">
+						<option value="">Select amount...</option>
+						<option value="8">8 oz.</option>
+						<option value="16">16 oz.</option>
+						<option value="24">24 oz.</option>
+						<option value="32">32 oz.</option>
+					    </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class='col-md-12' style='margin-bottom: 40px;'>
+
+                        <button id='save-tracker'>SAVE  <div id="save_spinner" style="display:none;margin-left:20px" class="spinner-border text-primary" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div></button>
+                    </div>
+			
+		    <div class='card studies-show-card'>
+                        <h3>HEALTH FACT</h3>
+                        <div id='patient-fact'></div>
+                    </div>
+
+                    
+                </div>
+            </div>
+            <div class='col-md-4'>
+                <div class='card studies-show-card'>
+                    <h3>DAILY MOTIVATION</h3>
+                    <div id='daily-tip'></div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    loadDate();
+
+
+    $(document).ready(function () {
+        $('#sidebarCollapse').on('click', function () {
+            $('#sidebar').toggleClass('active');
+        });
+    });
+    loadMotivationalFact();
+    loadHealthFact();
+    // loadHl("https://apps.hdap.gatech.edu/alcoholrecovery2-backend/user/getName");
+    loadName("https://apps.hdap.gatech.edu/alcoholrecovery2-backend/user/getName");
+    loadHeight("https://apps.hdap.gatech.edu/alcoholrecovery2-backend/user/getHeight");
+    loadWeight("https://apps.hdap.gatech.edu/alcoholrecovery2-backend/user/getWeight");
+
+    function saveTracking() {
+
+        $("#save_spinner").show();
+        var alcoholOz = parseInt($("#amount-alcohol").val());
+        var waterOz = parseInt($("#amount-water").val());
+
+        if (isNaN(alcoholOz) && isNaN(waterOz)) {
+            alert("Please enter a value and try again.");
+            return;
+        }
+        var d = new Date();
+        var month = d.getMonth() + 1;
+        month = (month >= 10) ? month : "0" + month;
+        var day = (d.getDate() >= 10) ? d.getDate() : "0" + d.getDate();
+
+        var date = d.getFullYear() + "-" + month + "-" + day;
+
+        if (alcoholOz == "" || isNaN(alcoholOz)) {
+            alcoholOz = 0;
+        }
+
+        if (waterOz == "" || isNaN(waterOz)) {
+            waterOz = 0;
+        }
+
+        var data = {
+            "water": waterOz,
+            "alcohol": alcoholOz,
+
+            "userId": USER_ID
+        }
+
+        var datastr = JSON.stringify(data);
+        var url = API_ROOT + "/alcoholrecovery2-backend/save/tracking";
+        $.ajax({
+            url: url,
+            headers: {
+                "Access-Control-Allow-Origin": "*",
+                'Content-Type': 'application/json'
+            },
+            method: 'POST',
+            dataType: 'json',
+            data: datastr,
+            success: function (response) {
+                $("#displayed").text("Tracking Saved")
+                $("#save_spinner").hide();
+                $("#drink_saved").show();
+            },
+            error: function (error) {
+                $("#displayed").html("<span style='color:red'>Something went wrong.</span>")
+                $("#save_spinner").hide();
+            }
+        });
+
+    }
+
+    $(document).ready(function () {
+
+        $("#save-tracker").click(saveTracking)
+
+    });
+</script>
+
+</body>
+</html>

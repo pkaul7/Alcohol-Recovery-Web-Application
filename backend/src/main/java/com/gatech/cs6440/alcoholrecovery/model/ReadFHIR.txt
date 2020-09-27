@@ -1,0 +1,74 @@
+package com.gatech.cs6440.alcoholrecovery.model;
+
+import java.util.List;
+import java.util.ArrayList;
+
+import org.hl7.fhir.dstu3.model.Bundle;
+import org.hl7.fhir.dstu3.model.Patient;
+import org.hl7.fhir.dstu3.model.Bundle.BundleEntryComponent;
+import org.hl7.fhir.dstu3.model.HumanName;
+import org.hl7.fhir.instance.model.api.IBaseResource;
+import org.hl7.fhir.instance.model.api.IBaseBundle;
+
+import ca.uhn.fhir.context.FhirContext;
+import ca.uhn.fhir.rest.client.api.IGenericClient;
+import ca.uhn.fhir.util.BundleUtil;
+
+/**
+ * This class contains methods for reading resources from the FHIR server.
+ */
+public class ReadFHIR {
+
+    IGenericClient client = null;
+    FhirContext ctx = null;
+
+    public SimpleRead(String baseUrl) {
+        ctx = FhirContext.forDstu3();
+        client = ctx.newRestfulGenericClient(baseUrl);
+    }
+
+    /**
+     * Find the patient with the given ID and return the full name as a
+     * single string.
+     */
+    public String getNameByPatientID(String id) {
+        
+		Patient patient = client.read().resource(Patient.class).withId(id).execute();
+        
+        HumanName human = patient.getNameFirstRep();
+        
+        String out = human.getNameAsSingleString();
+        return out;
+        
+        
+
+    }
+
+    /**
+     * Find all the patients that have the provided name and return a list
+     * of the IDs for those patients.  The search should include matches
+     * where any part of the patient name (family, given, prefix, etc.)
+     * matches the method 'name' parameter.
+     */
+    public List<String> getIDByPatientName(String name) {
+        List<IBaseResource> patients = new ArrayList<>();
+		    List<String> out = new ArrayList<>();
+        Bundle bundle = client.search().forResource(Patient.class).where(Patient.NAME.matches().value(name)).returnBundle(Bundle.class).execute();
+        
+		    patients.addAll(BundleUtil.toListOfResources(ctx, bundle));
+        
+        while (bundle.getLink(IBaseBundle.LINK_NEXT) != null) {
+   			bundle = client.loadPage().next(bundle).execute();
+   			patients.addAll(BundleUtil.toListOfResources(ctx, bundle));
+		    }
+
+		    for(IBaseResource p : patients) {
+            //System.out.println(p.getIdElement().getIdPart());
+			      out.add(p.getIdElement().getIdPart());
+        }
+        
+        
+        return out;
+    }
+
+}

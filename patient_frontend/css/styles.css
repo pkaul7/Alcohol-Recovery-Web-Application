@@ -1,0 +1,355 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fafafa;
+}
+
+
+body {
+	background-color: #111;
+	color: white;
+}
+
+hr {
+	border-top: 1px solid white;
+}
+
+/*#sidenav {
+	background: #262626;
+	min-height: 100vh;
+}*/
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
+}
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.navbar {
+    padding: 15px 0px;
+    background: #111;
+    border-bottom: 3px solid #ccc;
+    border-radius: 0;
+    margin-bottom: 40px;
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
+}
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+h1 {
+    font-weight: 700;
+}
+
+.logo-color {
+	color: #00ab9a;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    background: #262626;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+#sidebar h3 {
+	font-weight: 700;
+	text-align: center;
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: #222;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid white;
+}
+
+#sidebar ul.components a {
+	padding: 20px 0;
+	padding-left: 25px;
+}
+
+#sidebar a svg {
+	margin-right: 10px;
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+
+#sidebar ul li a:hover {
+    color: #262626;
+    background: #fff;
+}
+
+#sidebar ul li.active>a,
+a[aria-expanded="true"] {
+    color: #fff;
+    background: #111;
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #6d7fcc;
+}
+
+ul.CTAs {
+    padding: 20px;
+}
+
+ul.CTAs a {
+    text-align: center;
+    font-size: 0.9em !important;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+a.logout{
+    background:#00ab9a !important;
+    color: #fff !important;
+    font-weight: 700;
+}
+
+
+a.logout:hover {
+    background: #7dc3bc !important;
+    color: #fff !important;
+    font-weight: 700;
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+#content {
+    width: 100%;
+    padding: 20px 50px;
+    min-height: 100vh;
+    max-height: 100vh;
+    transition: all 0.3s;
+    overflow: auto;
+}
+
+.milestone-card {
+    background: #262626;
+    box-shadow: 5px 5px 15px #000;
+    color: white;
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.milestone-image img {
+    margin: 0 auto 20px;
+    width: 50%;
+}
+
+.milestone-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 20px auto 0px;
+}
+
+.milestone-earned {
+    color: #ccc;
+    font-size: 1.4rem;
+}
+
+.milestone-motivation {
+    font-weight: 700;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.print-button {
+    background: #00ab9a;
+    color: white;
+    border: none;
+    padding: 5px 15px;
+}
+
+.legend {
+    background: #262626;
+    width: 100%;
+    max-width: 200px;
+}
+
+.legend .water-line {
+    color: #296681;
+}
+
+.legend .alcohol-line {
+    color: #f8942c;
+}
+
+.tracker-image img {
+    height: 200px;
+    margin: auto;
+}
+
+.tracker-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 40px auto 0;
+}
+
+.tracker-input {
+    margin-top: 40px;
+}
+
+.tracker-more-info {
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+.tracker-more-info a {
+    text-decoration: underline;
+}
+
+#save-tracker {
+    background: #00ab9a;
+    font-weight: 700;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    border: none;
+    color: white;
+    width: 100%;
+}
+
+.send-data-form {
+    /*margin-top: 20px;*/
+}
+
+.send-data-form input[type=submit] {
+    background: #00ab9a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-weight: 700;
+}
+
+.studies-show-card {
+    background: #262626;
+    box-shadow: 5px 5px 15px #000;
+    color: white;
+    text-align: left;
+    margin-bottom: 50px;
+    padding: 40px;
+}
+
+.studies-show-card h3 {
+    font-weight: 700;
+    text-align: center;
+}
+
+.studies-show-card div {
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+.activity-search {
+    background: #00ab9a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-weight: 700;
+    width: 100%;
+}
+
+.activities-map img {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.account-save {
+    background: #00ab9a;
+    color: white;
+    border: none;
+    margin-top: 40px;
+    padding: 10px 20px;
+    font-weight: 700;
+    width: 100%;
+}
+
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #sidebarCollapse span {
+        display: none;
+    }
+}

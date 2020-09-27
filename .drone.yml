@@ -15,9 +15,28 @@ steps:
 - name: deploy_java_server_image
   image: plugins/docker
   settings:
-    repo: build.hdap.gatech.edu/alcoholrecovery2-backend
+    repo: gt-build.hdap.gatech.edu/alcoholrecovery2-backend
     context: backend
     dockerfile: backend/Dockerfile
+    tags:
+      - latest
+      
+- name: deploy_frontend_image
+  image: plugins/docker
+  settings:
+    repo: gt-build.hdap.gatech.edu/alcoholrecovery2-frontend
+    context: patient_frontend
+    dockerfile: patient_frontend/Dockerfile
+    tags:
+      - latest
+      
+# Here is an example more generic step to deploy to the HDAP Docker registry
+- name: deploy_database_image
+  image: plugins/docker
+  settings:
+    repo: gt-build.hdap.gatech.edu/alcoholrecovery2-database
+    context: database
+    dockerfile: database/Dockerfile
     tags:
       - latest
 
@@ -57,8 +76,13 @@ services:
 volumes:
 - name: dockersock
   temp: {}
+  
+concurrency:
+  limit: 1
+
 trigger:
   branch:
   - cs6440
   event:
   - push
+

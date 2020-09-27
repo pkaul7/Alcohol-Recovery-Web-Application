@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Activities | Alcohol Recovery 2</title>
+    <!--	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+-->
+    <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<!-- <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+	 <!-- Bootstrap CSS CDN -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous"> -->
+    <!-- Our Custom CSS -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+	<script src="responsive.js" type="text/javascript"></script>
+	<script src="ajax.js" type="text/javascript"></script>
+	<div id="storage" style="display:none;"></div>
+	
+	<div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Drink<span class='logo-color'>Tracker</span></h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li><a href="tracker.html"><i class='fas fa-beer'></i> Track Drinks</a></li>
+                <li><a href="history.html"><i class='fas fa-chart-bar'></i> History</a></li>
+                <li class='active'><a href="activities.html"><i class='fas fa-walking'></i> Activities</a></li>
+                <li><a href="milestones.html"><i class='fas fa-trophy'></i> Milestones</a></li>
+            </ul>
+
+            <ul class="list-unstyled CTAs">
+                <li><a href="https://apps.hdap.gatech.edu/alcoholrecovery2-backend/login/logout" class="logout">Logout</a></li>
+            </ul>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container-fluid">
+                    <!-- <button type="button" id="sidebarCollapse" class="btn btn-info"><i class="fas fa-align-left"></i> <span></span></button> -->
+                    <div><div id='header-name'></div><div id='header-date'></div></div>
+                    <div class="nav navbar-nav ml-auto"><div>Height: <span id='header-height'>0</span> in.<br>Weight: <span id='header-weight'>0</span> lbs.</div></div>
+                </div>
+            </nav>
+
+            <h1>Activities</h1>
+
+            <div class='row' style='margin-top: 40px;'>
+                <div class='col-md-8'>
+                    <form action='' method=''>
+                        <div class='row'>
+                            <div class='col-md-7'>
+                                <div class='form-group'>
+                                    <label for='activity' style='margin-right: 10px;'>Activity:</label>
+                                    <select class='form-control custom-select' style='max-width: 300px;'>
+                                        <option value="choose">Choose Activity</option>
+                                        <option value="run">Running</option>
+                                        <option value="gym">Workout</option>
+                                        <option value="cycle">Cycling</option>
+                                        <option value="museum">Art/Museum</option>
+                                        <option value="zoo">Zoo/Aquarium</option>
+                                        <option value="movie">Movie</option>
+                                        <option value="golf">Golf</option>
+                                        <option value="arcade">Arcade Games</option>
+
+                                    </select>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </form>
+
+                    <div class="choose box"><iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d26530.87427388635!2d-84.39909922299161!3d33.777219033748516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1splaces%20near%20me!5e0!3m2!1sen!2sus!4v1585337873929!5m2!1sen!2sus" width="100%" height="550" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></div>
+
+
+                    <div class="run box"><iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d13265.04484992113!2d-84.39950736385666!3d33.7797521290208!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sparks!5e0!3m2!1sen!2sus!4v1585333066905!5m2!1sen!2sus" width="100%" height="550" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></div>
+
+                    <div class="gym box"><iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d13265.044658436047!2d-84.39950736034008!3d33.77975336544693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sgym!5e0!3m2!1sen!2sus!4v1585331894505!5m2!1sen!2sus" width="100%" height="550" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>  </div>
+   
+
+                    <div class="cycle box"><iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d13264.995322852485!2d-84.3967178699977!3d33.78007192576938!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1scycle%20trail!5e0!3m2!1sen!2sus!4v1585333489486!5m2!1sen!2sus" width="100%" height="550" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></div>
+
+                    <div class="museum box"><iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d13264.995418596269!2d-84.39671787175598!3d33.78007130755344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1smuseum!5e0!3m2!1sen!2sus!4v1585334473553!5m2!1sen!2sus" width="100%" height="550" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></div>
+
+                    <div class="zoo box"><iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d26537.574909820803!2d-84.4007320973078!3d33.7555783683162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1szoo!5e0!3m2!1sen!2sus!4v1585338469686!5m2!1sen!2sus" width="100%" height="550" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></div>
+
+                    <div class="movie box"><iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d26537.575675016844!2d-84.40073210434296!3d33.75557589630743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1smovie!5e0!3m2!1sen!2sus!4v1585338550780!5m2!1sen!2sus" width="100%" height="550" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></div>
+
+                    <div class="golf box"><iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d53047.097660956206!2d-84.4204934826267!3d33.8008636307339!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sgolf!5e0!3m2!1sen!2sus!4v1585338647554!5m2!1sen!2sus" width="100%" height="550" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></div>
+
+                    <div class="arcade box"><iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d53047.81110966438!2d-84.41517200806778!3d33.79971255635712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sarcade!5e0!3m2!1sen!2sus!4v1585338691674!5m2!1sen!2sus" width="100%" height="550" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></div>
+
+		    <div class='card studies-show-card' style='margin-top: 50px;'>
+                        <h3>HEALTH FACT</h3>
+                        <div id='patient-fact'></div>
+                    </div>
+
+                </div>
+                <div class='col-md-4'>
+                    <div class='card studies-show-card'>
+                        <h3>DAILY MOTIVATION</h3>
+                        <div id='daily-tip'></div>
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+	loadDate();
+
+	    
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+	loadMotivationalFact();
+	loadHealthFact();
+    	loadName("https://apps.hdap.gatech.edu/alcoholrecovery2-backend/user/getName");
+    	loadHeight("https://apps.hdap.gatech.edu/alcoholrecovery2-backend/user/getHeight");
+    	loadWeight("https://apps.hdap.gatech.edu/alcoholrecovery2-backend/user/getWeight");
+    </script>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $("select").change(function(){
+            $(this).find("option:selected").each(function(){
+                var optionValue = $(this).attr("value");
+                if(optionValue){
+                    $(".box").not("." + optionValue).hide();
+                    $("." + optionValue).show();
+                } else{
+                    $(".box").hide();
+                }
+            });
+        }).change();
+    });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>History | Alcohol Recovery 2</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <!--	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+-->
+    <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+     <!-- Bootstrap CSS CDN -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous"> -->
+    <!-- Our Custom CSS -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <style>
+        #chart_div {
+            overflow-x: scroll;
+            overflow-y: hidden;
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    <script src="responsive.js" type="text/javascript"></script>
+    <script src="ajax.js" type="text/javascript"></script>
+   
+    <div style="display:none;">
+	<div id="nameStorage"></div>
+	<div id="heightStorage"></div>
+	<div id="weightStorage"></div>
+    </div>
+    
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Drink<span class='logo-color'>Tracker</span></h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li><a href="tracker.html"><i class='fas fa-beer'></i> Track Drinks</a></li>
+                <li class="active"><a href="history.html"><i class='fas fa-chart-bar'></i> History</a></li>
+                <li><a href="activities.html"><i class='fas fa-walking'></i> Activities</a></li>
+                <li><a href="milestones.html"><i class='fas fa-trophy'></i> Milestones</a></li>
+            </ul>
+
+            <ul class="list-unstyled CTAs">
+                <li><a href="https://apps.hdap.gatech.edu/alcoholrecovery2-backend/login/logout" class="logout">Logout</a></li>
+            </ul>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container-fluid">
+                    <!-- <button type="button" id="sidebarCollapse" class="btn btn-info"><i class="fas fa-align-left"></i> <span></span></button> -->
+                    <div><div id='header-name'></div><div id='header-date'></div></div>
+                    <div class="nav navbar-nav ml-auto"><div>Height: <span id='header-height'>0</span> in.<br>Weight: <span id='header-weight'>0</span> lbs.</div></div>
+                </div>
+            </nav>
+
+
+                    <h1 style='margin-bottom: 40px;'>Alcohol Intake History</h1>
+
+            <div class='row' style='margin-top: 40px;'>
+                <div class='col-md-9' style='margin-bottom: 50px;'>
+                    <div class='toolbar text-right'><button class='print-button' onclick='window.print();'><i class='fas fa-print'></i></button></div>
+                    <div id="chart_div" style='margin-top: 10px;'></div>
+			
+		    <div class='card studies-show-card' style='margin-top: 50px;'>
+                        <h3>HEALTH FACT</h3>
+                        <div id='patient-fact'></div>
+                    </div>
+                </div>
+
+                <div class='col-md-3'>
+                    <div class='card studies-show-card'>
+                        <h3>DAILY MOTIVATION</h3>
+                        <div id='daily-tip'></div>
+                    </div>
+		</div>
+		    
+            </div> 
+
+            
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        loadDate();
+      //  loadH1("https://apps.hdap.gatech.edu/alcoholrecovery2-backend/user/getName");
+        
+        //check login status, if not logged in, redirect to login
+	   // loadLogIn("https://apps.hdap.gatech.edu/alcoholrecovery2-backend/login/loggedIn");
+
+        var drinkData = [];
+
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+
+
+            $.get(API_ROOT+"/alcoholrecovery2-backend/user/drinkData",function(data){
+                  drinkData = data;
+		    drawChart();
+            })
+        });
+        loadMotivationalFact();
+	    loadHealthFact();
+	    loadName(API_ROOT+"/alcoholrecovery2-backend/user/getName");
+    	loadHeight(API_ROOT+"/alcoholrecovery2-backend/user/getHeight");
+
+
+    	loadWeight(API_ROOT+"/alcoholrecovery2-backend/user/getWeight");
+	    
+        google.charts.load('current', {'packages':['line', 'corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+      var chartDiv = document.getElementById('chart_div');
+      var data = new google.visualization.DataTable();
+      data.addColumn('date', 'Days');
+      data.addColumn('number', "Water Intake");
+      data.addColumn('number', "Alcohol Intake");
+      var rows = [];
+        $.each(drinkData, function(i, obj) {
+            var date = new Date(obj.year,obj.month-1,obj.day);
+            rows.push([date,obj.water, obj.alcohol]);
+        })
+
+        data.addRows(rows);
+
+
+      var materialOptions = {
+        chart: {
+          title: ' '
+        },
+        width: "100%",
+        height: 450,
+        series: {
+          // Gives each series an axis name that matches the Y-axis below.
+          0: {axis: 'Water'},
+          1: {axis: 'Alcohol'}
+        },
+
+          explorer: {axis: 'horizontal'},
+        axes: {
+          // Adds labels to each axis; they don't have to match the axis names.
+          y: {
+            Water: {label: 'Water{ltr.}'},
+            Alcohol: {label: 'Alcohol{ltr.}'}
+          }
+        }
+      };
+
+
+      function drawMaterialChart() {
+
+        var materialChart =  new google.visualization.LineChart(chartDiv);
+        materialChart.draw(data, materialOptions);
+        //button.innerText = 'Change to Classic';
+        //button.onclick = drawClassicChart;
+      }
+
+
+      drawMaterialChart();
+
+    }
+	    
+	window.onresize = function() {
+		drawChart();
+	}    
+    </script>
+
+</body>
+</html>
